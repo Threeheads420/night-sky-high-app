@@ -2,22 +2,75 @@
 <html>
 <head>
     <title>NightSkyHigh</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<nav>
-    <a href="/">Home</a>
-    <a href="/planets">Planets</a>
-    <a href="/moons">Moons</a>
-    <a href="/gallery">Gallery</a>
-    <a href="/community">Community</a>
-    <a href="/upload">Upload</a>
-    <a href="/jokes">Jokes</a>
-    <a href="/arcade">Arcade</a>
-    <a href="/observatory">Observatory</a>
-    <a href="/newsletter">Newsletter</a>
-    <a href="/about">About</a>
-    <a href="/login">Login</a>
-</nav>
+
 <body>
+
+   <nav>
+
+    <a href="/"
+       class="{{#if (eq currentPath '/')}}active{{/if}}">
+       Home
+    </a>
+
+    <a href="/planets"
+       class="{{#if (eq currentPath '/planets')}}active{{/if}}">
+       Planets
+    </a>
+
+    <a href="/moons"
+       class="{{#if (eq currentPath '/moons')}}active{{/if}}">
+       Moons
+    </a>
+
+    <a href="/gallery"
+       class="{{#if (eq currentPath '/gallery')}}active{{/if}}">
+       Gallery
+    </a>
+
+    <a href="/community"
+       class="{{#if (eq currentPath '/community')}}active{{/if}}">
+       Community
+    </a>
+
+    <a href="/upload"
+       class="{{#if (eq currentPath '/upload')}}active{{/if}}">
+       Upload
+    </a>
+
+    <a href="/jokes"
+       class="{{#if (eq currentPath '/jokes')}}active{{/if}}">
+       Jokes
+    </a>
+
+    <a href="/arcade"
+       class="{{#if (eq currentPath '/arcade')}}active{{/if}}">
+       Arcade
+    </a>
+
+    <a href="/observatory"
+       class="{{#if (eq currentPath '/observatory')}}active{{/if}}">
+       Observatory
+    </a>
+
+    <a href="/newsletter"
+       class="{{#if (eq currentPath '/newsletter')}}active{{/if}}">
+       Newsletter
+    </a>
+
+    <a href="/about"
+       class="{{#if (eq currentPath '/about')}}active{{/if}}">
+       About
+    </a>
+
+    <a href="/login"
+       class="{{#if (eq currentPath '/login')}}active{{/if}}">
+       Login
+    </a>
+
+</nav>
+
     {{{body}}}
 </body>
 </html>
