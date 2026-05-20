@@ -54,9 +54,9 @@
        Observatory
     </a>
 
-    <a href="/newsletter"
-       class="{{#if (eq currentPath '/newsletter')}}active{{/if}}">
-       Newsletter
+    <a href="/history"
+       class="{{#if (eq currentPath '/history')}}active{{/if}}">
+       History
     </a>
 
     <a href="/about"
@@ -69,8 +69,65 @@
        Login
     </a>
 
+    <a href="/timeToChill"
+       class="{{#if (eq currentPath '/timeToChill')}}active{{/if}}">
+       Time To Chill
+    </a>
+
 </nav>
+<!-- =========================================================
+NIGHTSKYHIGH CONTROL SYSTEM
+Global site controls. Real controls can be added later.
+========================================================= -->
+
+<div class="control-system">
+    <button id="controlSystemButton" type="button">
+        Transport Me To 
+        <br>
+        Bridge Controls.
+    </button>
+
+    <div id="controlSystemPanel" class="control-system-panel">
+        <p id="controlSystemMessage">
+            Do you think you're on the Starship Enterprise?<br>
+            You're looking at a website.<br>
+            Try again.
+        </p>
+
+        <img src="/images/artwork/alien-laughing.webp"
+             alt="Laughing alien"
+             class="control-alien">
+
+        <div id="realControls" class="real-controls">
+            <button id="fullscreenToggle" type="button">
+    Full Strain
+</button>
+            <button type="button">Music</button>
+            <button type="button">Volume</button>
+        </div>
+    </div>
+</div>
+<div class="section-header-card">
+
+    <div class="section-header-left">
+
+        <h1>{{pageTitle}}</h1>
+
+        <p>{{pageSubtitle}}</p>
+
+    </div>
+
+   <div class="section-header-links">
+
+    
+
+    {{{sectionLinks}}}
+
+</div>
+
+</div>
 
     {{{body}}}
+    <script src="/js/site-controls.js"></script>
 </body>
 </html>

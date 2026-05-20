@@ -1,0 +1,42 @@
+<div class="page-content">
+
+    <section class="planet-detail-layout">
+
+        <div class="planet-image-area">
+            <img src="{{planet.image}}" alt="{{planet.name}}">
+        </div>
+
+        <div class="planet-info-area">
+
+            <div class="planet-info-card">
+                <h2>Overview</h2>
+                <p>{{planet.description}}</p>
+            </div>
+
+            <div class="planet-info-card">
+                <h2>Planet Facts</h2>
+
+                <p><strong>Type:</strong> {{planet.type}}</p>
+                <p><strong>Distance from Sun:</strong> {{planet.distanceFromSun}}</p>
+                <p><strong>Length of Year:</strong> {{planet.yearLength}}</p>
+                <p><strong>Length of Day:</strong> {{planet.dayLength}}</p>
+                <p><strong>Moons:</strong> {{planet.moons}}</p>
+                <p><strong>Gravity:</strong> {{planet.gravity}}</p>
+                <p><strong>Atmosphere:</strong> {{planet.atmosphere}}</p>
+                <p><strong>Smoking Policy:</strong> {{planet.smokingStatus}}</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="planet-comedy-card">
+        <h2>Cosmic Commentary</h2>
+        <p>{{planet.nightSkyFact}}</p>
+    </section>
+
+    <p>
+        <a href="/planets">Back to Planets</a>
+    </p>
+
+</div>

@@ -3,7 +3,88 @@
    MAIN STYLESHEET
    FILE: style.css
 ========================================================= */
+/* =========================================================
+SECTION HEADER CARD
+Global page header used across the whole site.
+========================================================= */
 
+.section-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    margin: 20px auto 30px auto;
+    padding: 18px;
+
+    max-width: 1200px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+
+    box-shadow: 0 0 18px rgba(0, 255, 153, 0.25);
+}
+
+.section-header-left h1 {
+    margin: 0;
+}
+
+.section-header-left p {
+    margin: 6px 0 0 0;
+    color: #bbbbbb;
+}
+
+.section-header-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.planet-links-text {
+    color: #bbbbbb;
+
+    margin-right: 12px;
+
+    white-space: nowrap;
+
+    font-size: 0.9rem;
+}
+
+.planet-link-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #bbbbbb;
+
+    font-size: 0.8rem;
+}
+
+.planet-link-item img {
+    width: 45px;
+
+    height: 45px;
+
+    object-fit: cover;
+
+    margin-bottom: 4px;
+}
+
+.section-header-links img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.section-header-links a {
+    text-decoration: none;
+}
 /* =========================================================
    GLOBAL RESET / RESPONSIVE SAFETY
 ========================================================= */
@@ -22,7 +103,16 @@ body {
     margin: 0;
     padding: 0;
 }
+/* =========================================================
+MARS LAW:
+All images entering Night Sky High territory
+must comply with white border regulations.
+========================================================= */
 
+img {
+    border: 2px solid white;
+    border-radius: 10px;
+}
 /* =========================================================
    BODY / GLOBAL SITE STYLE
 ========================================================= */
@@ -31,7 +121,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 
-    background-image: url("/images/starss.gif");
+    background-image: url("/images/background/starss.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -157,33 +247,6 @@ h2 {
    CARD SYSTEM
 ========================================================= */
 
-.card-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 20px;
-
-    margin-top: 30px;
-}
-
-.card {
-    background: rgba(255,255,255,0.05);
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 0 15px rgba(0,255,255,0.3);
-}
 
 .card img {
     width: 100%;
@@ -262,7 +325,35 @@ img {
 
     display: block;
 }
+/* =========================================================
+PLANET CARD LAYOUT
+Reusable card system for planets and future moon cards.
+========================================================= */
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.card-content h2 {
+    margin-bottom: 10px;
+}
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -304,4 +395,136 @@ img {
         animation: none !important;
         transition: none !important;
     }
+}
+/* =========================================================
+MOON PHOTO GALLERY
+Used for the old NightSkyHigh moon photo page.
+========================================================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    align-items: start;
+    justify-items: center;
+    margin: 12px 0;
+}
+
+figure {
+    margin: 0;
+}
+
+.thumb {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(.25,.1,.25,1), border-color 0.4s ease;
+}
+
+.thumb:hover {
+    transform: scale(3);
+    z-index: 10;
+    border-color: #00ff00;
+}
+
+figcaption {
+    font-size: 0.85em;
+    color: #9ee59e;
+    text-align: center;
+    margin-top: 6px;
+    word-break: break-all;
+}
+/* =========================================================
+BRIDGE CONTROL PANEL
+Global NightSkyHigh control system.
+========================================================= */
+
+.control-system {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+#controlSystemButton {
+    background: linear-gradient(135deg, #111, #333);
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    border-radius: 50% 50% 45% 45%;
+    padding: 18px 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00ff99;
+}
+
+.control-system-panel {
+    display: none;
+    margin-top: 12px;
+    max-width: 280px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ff99;
+    border-radius: 14px;
+    box-shadow: 0 0 18px #00ff99;
+}
+
+.control-system-panel.show {
+    display: block;
+}
+
+.control-alien {
+    max-width: 120px;
+    margin: 10px auto;
+    display: block;
+}
+
+.real-controls {
+    display: none;
+}
+
+.real-controls.show {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* =========================================================
+PLANET DETAIL PAGE
+Image on the left, information on the right.
+========================================================= */
+
+.planet-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 30px auto;
+    align-items: start;
+}
+
+.planet-image-area img {
+    width: 100%;
+    height: 520px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.planet-info-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.planet-info-card,
+.planet-comedy-card {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.planet-comedy-card {
+    max-width: 1200px;
+    margin: 20px auto;
 }
